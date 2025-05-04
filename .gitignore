@@ -1,0 +1,61 @@
+# Node.js
+node_modules/
+
+# Vite build
+/dist
+
+# VSCode
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Log files
+*.log
+log.txt
+
+# dotenv environment files
+.env
+.env.*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtualenv
+venv/
+ENV/
+env/
+
+# Flask instance folder
+instance/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# System
+Thumbs.db
+Desktop.ini
+
+# Build output
+build/
+
+# Local IDE
+.idea/
+
+# npm debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test
+coverage/ 
