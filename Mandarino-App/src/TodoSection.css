@@ -98,6 +98,7 @@
   align-items: center;
   transform: translateX(-175px);
 }
+
 .add-todo-btn img {
   width: 25px;
   height: 25px;
@@ -115,49 +116,64 @@
   font-weight: 600;
   box-sizing: border-box;
   min-height: 38px;
-  transition: box-shadow 0.2s;
+  transition: all 0.2s ease;
   box-shadow: 0 2px 8px #00000010;
   width: 90%;
-  margin-left:  0;
+  margin-left: 0;
   margin-right: 0;
-}
-
-.todo-card.last {
-  margin-bottom: 48px; /* 最下面的卡片底部多留空間 */
-}
-
-.todo-card.urgent {
-  background: #F9AF5F;
-  color: #222;
-}
-
-.todo-card.later {
+  border: none;
+  cursor: pointer;
+  text-align: left;
   background: #FFCB94;
   color: #222;
+}
+
+.todo-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px #00000020;
 }
 
 .todo-card.disabled {
   background: rgba(255, 203, 148, 0.5);
   color: rgba(0,0,0,0.4);
   text-decoration: line-through;
-  pointer-events: none;
   font-weight: 500;
+  cursor: pointer; /* 讓滑鼠指標變成小手，讓用戶知道可以點 */
+}
+
+
+.todo-card.disabled:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px #00000020;
+}
+
+.todo-card span {
+  pointer-events: none;
 }
 
 .delete-btn {
-  position: absolute; /* ⭐️ 絕對定位 */
+  position: absolute;
   top: 0;
   right: 0;
-  transform: translate(30%, -30%); /* ⭐️ 將按鈕中心對齊右上角 */
-  width: 20px; /* 按鈕大小，可依需要微調 */
+  transform: translate(30%, -30%);
+  width: 20px;
   height: 20px;
   background: none;
   border: none;
   cursor: pointer;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   padding: 0;
+  z-index: 1;
+}
+
+.todo-card:not(.disabled):hover .delete-btn {
+  display: flex;
+}
+
+.todo-card.disabled .delete-btn {
+  display: none;
 }
 
 .delete-btn img {
